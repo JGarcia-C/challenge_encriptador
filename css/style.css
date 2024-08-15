@@ -17,7 +17,7 @@
 }
 
 body{
-    height: 100%;
+    height: 90%;
 }
 
 img{
@@ -45,7 +45,7 @@ main{
 }
 
 .inicial{
-    width: 60%;
+    width: 100%;
     margin: 120px 0px 0px 120px;
     background: transparent;
 }
@@ -127,13 +127,14 @@ main{
 }
 
 .encriptado{
-    width: 350px;
+    width: 400px;
     height: 582px;
     background: white;
     box-shadow: 10px 10px 10px -8px gray;
     position: relative;
     margin-top: 25px;
     border-radius: 32px;
+    margin: 40px;
     text-align: center;
     align-items: center;
 }
@@ -196,7 +197,7 @@ main{
     position: absolute;
     bottom: 0;
     left: 0;
-    /*visibility: hidden;*/
+    visibility: hidden;
     padding: 24px;
     font-size: 16px;
     line-height: 19px;
@@ -214,27 +215,33 @@ main{
     transform: scale(0.98);
 }
 
-.footer{
+footer{
     margin-top: 15px;
     padding: 10px;
     border-top: 2px solid var(--fondo);
-    color: var(--gray-text);
+    color: var(--fondo);
     text-align: center;
-    height: 5px;
+    height: 100%;
     font-size: 20px;
     font-weight: 700;
     background-color: var(--gray-text);
+    bottom: 0;
+    width: 100%;
 }
 
-.linked:hover{
-    transform: scale(0,98);
+.copyright{
+    background: transparent;
 }
 
-.git:hover{
-    color: #343A40;
+.links{
+    background-color: transparent;
+}
+.linked,.git{
+    background: var(--gray-text);
 }
 
-@media(max-width: 970px){
+
+@media(max-width: 1140px){
     
     header{
         margin: 40px 0px 0px -10px;
@@ -249,17 +256,19 @@ main{
     }
 
     .inicial{
-        margin: 180px 0px 0px 90px;
+        margin: 180px 0px 0px 0px;
         width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .inicial_texto_ingresado{
-        margin: 0px 0px 0px 0px;
+        margin: 0px 0px 0px 80px;
         display: flex;
         flex-direction: column;
         align-items: center;
         width: 100%;
-        height: 600px;
     }
 
     .botones{
@@ -321,7 +330,7 @@ main{
     }
 
     .inicial{
-        margin: 180px 0px 0px 200px;
+        margin: 180px 0px 0px 0px;
         width: 90%;
     }
 
@@ -329,6 +338,7 @@ main{
         margin: 0px;
         width: 100%;
         font-size: 32px;
+        height: 310px;
     }
 
     .botones{
@@ -339,6 +349,10 @@ main{
     .encriptado{
         width: 90%;
         
+    }
+
+    footer{
+        width: 100%;
     }
 
     .copyright{
