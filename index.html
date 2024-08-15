@@ -1,47 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
     <title>challenge</title>
 </head>
 <body>
     <header>
-        <img class="logo" src="/imagenes/Logo.png" alt="imagen de Alura Latam">
+        <a href="#" rel="">
+            <img class="logo" src="/imagenes/Logo.png" alt="imagen de Alura Latam">
+        </a>
     </header>
     <main>
-        <section>
-            <textarea class="texto" cols="30" rows="10" placeholder="Ingrese el texto aqui"></textarea>
-            <div>
-                <h6 class="informacion">
+        <section class="inicial">
+            <textarea class="inicial_texto_ingresado" placeholder="Ingrese el texto aqui"></textarea>
+            <div class="inicial_informacion">
+                <img class="inicial_informacion_logo" src="/imagenes/bi_exclamation-circle-fill.png" alt="imagen de signo de exclamación">
+                <p class="inicial_informacion_texto">
                     Solo letras minúsculas y sin acentos
-                </h6>
-                <img src="/imagenes/bi_exclamation-circle-fill.png" alt="imagen de signo de exclamación">
+                </p>                
             </div>
             <div class="botones">
-                <button class="boton-encriptar" onclick="btnEncriptar()">
+                <button class="boton-encriptar" type="submit" onclick="btnEncriptar()">
                     Encriptar
                 </button>
-                <button class="boton-desencriptar" onclick="btnDesencriptar()">
+                <button class="boton-desencriptar" type="submit" onclick="btnDesencriptar()">
                     Desencriptar
                 </button>
             </div>           
         </section>
-        <section>
-            <textarea class="texto_encriptado" cols="30" rows="10"></textarea>
-            <div>
-                <button class="boton_copiar">
-                    Copiar
-                </button>
+        <section class="encriptado">
+            <div class="encriptado_contenedor">
+                <img src="./imagenes/Muñeco.png" alt="Imangen de persona buscando" class="img-muñeco">
+                <p class="texto-uno">
+                    Ningún mensaje fue encontrado
+                </p>
+                <p class="texto-dos">
+                    Ingresa el texto que desees encriptar o desencriptar.
+                </p>
+            
             </div>
+            <textarea class="texto_encriptado" type="mensaje" readonly></textarea>
+            <button class="boton_copiar" type="submit">
+                Copiar
+            </button>
         </section>
     </main>
-    <footer>
-
+    <footer class="footer">
+        <p class="copyright">&copy; copyright 2024 - Encriptador de Texto - Desarrollado por Jhon Garcia</p>
+        <a href="#" rel="">
+            <img src="./imagenes/linkedin.png" alt="logo LinkedIn" class="linked">
+            <img src="./imagenes/github.png" alt="logo GitHub" class="git">
+        </a>
     </footer>
 <script src="/script.js"></script>
 </body>

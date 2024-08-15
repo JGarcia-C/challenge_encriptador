@@ -1,4 +1,4 @@
-const textArea = document.querySelector(".texto");
+const textArea = document.querySelector(".texto_ingresado");
 const mensaje = document.querySelector(".texto_encriptado");
 
 /* La letra "e" es convertida para "enter"
@@ -43,3 +43,11 @@ function desencriptar(stringDesencriptado){
     }
     return stringDesencriptado
 }
+
+function limitarTexto(e){
+    let texto = e.target.value;
+    texto = texto.replace(/[^a-z\s]/g, ''); // Permite solo letras minúsculas y espacios
+    e.target.value = texto;
+}
+
+textArea.addEventListener("input", limitarTexto);
