@@ -2,10 +2,13 @@ const textArea = document.querySelector(".inicial_texto_ingresado");
 const mensaje = document.querySelector(".texto_encriptado");
 const contenido = document.querySelector(".encriptado_contenedor");
 const btnCopiar = document.querySelector(".boton_copiar")
+const contenidoSalida = document.querySelector(".encriptado")
+const btnEncriptaar = document.querySelector(".boton-encriptar")
+const btnDesencriptaar = document.querySelector(".boton-desencriptar")
 
 function limitarTexto(e){
     let texto = e.target.value;
-    texto = texto.replace(/[^a-z\s]/g, ''); // Permite solo letras minúsculas y espacios
+    texto = texto.replace(/[^a-z\s]/g, '');
     e.target.value = texto;
 }
 
@@ -51,6 +54,7 @@ function desencriptar(stringDesencriptado){
     return stringDesencriptado
 }
 
+
 btnCopiar.addEventListener("click", e=>{
     e.preventDefault();
     let copiar = mensaje;
@@ -59,12 +63,47 @@ btnCopiar.addEventListener("click", e=>{
     limpiarText();
     btnCopiar.style.visibility = 'hidden'
     contenido.style.display = 'block';
+    if (mediaQuery.matches) { 
+        contenidoSalida.style.height = '120px';       
+    } 
 })
+
+function modificarText() {
+
+    contenidoSalida.style.height = 'auto';
+    const scrollHeight = textArea.scrollHeight; 
+    contenidoSalida.style.height = scrollHeight + 'px';
+    if (scrollHeight > 400) {
+        mensaje.style.height = '320px';
+        contenidoSalida.style.height = '400px';
+    }
+}
+
 
 function limpiarText(){
     document.querySelector(".texto_encriptado").value = '';
 }
 
-function condicionesIniciales(){
-    document.querySelector(".encriptado_contenedor").value = 'contenido';
+const mediaQuery = window.matchMedia('(max-width: 1140px)');
+
+function checkMediaQuery() {
+    if (mediaQuery.matches) {
+        btnDesencriptaar.addEventListener('click', function() {
+            modificarText();
+         });
+        btnEncriptaar.addEventListener('click', function() {
+            modificarText();
+         });
+    } else {
+        btnDesencriptaar.removeEventListener('click', function() {
+            modificarText();
+         });
+        btnEncriptaar.removeEventListener('click', function() {
+            modificarText();
+         });
+    }
 }
+
+checkMediaQuery();
+
+mediaQuery.addEventListener('change', checkMediaQuery);

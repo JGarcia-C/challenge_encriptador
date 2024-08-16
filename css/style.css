@@ -5,6 +5,7 @@
     --fondo: #F3F5FC;
     --gray: #c5c5c5;
     --gray-text: #495057;
+    --white: #FFFFFF;
 }
 
 *{
@@ -81,7 +82,7 @@ main{
     font-weight: 400;
     font-size: 12px;
     line-height: 150%;
-    color: #495057
+    color: var(--gray-text)
 }
 
 .botones{
@@ -102,7 +103,7 @@ main{
     font-size: 16px;
     line-height: 19px;
     text-align: center;
-    color: white;
+    color: var(--white);
     background: var(--font);
     border: 1px solid var(--font);
     border-radius: 24px;
@@ -120,7 +121,7 @@ main{
     font-size: 16px;
     line-height: 19px;
     text-align: center;
-    background: #D8DFE8;
+    background: var(--fondo);
     border: 1px solid var(--font);
     border-radius: 24px;
     cursor: pointer;  
@@ -129,7 +130,7 @@ main{
 .encriptado{
     width: 400px;
     height: 582px;
-    background: white;
+    background: var(--white);
     box-shadow: 10px 10px 10px -8px gray;
     position: relative;
     margin-top: 25px;
@@ -143,11 +144,11 @@ main{
     width: 250px;
     margin: auto;
     margin-top: 40%;
-    background: white;
+    background: var(--white);
 }
 
 .img-muñeco{
-    background: white;
+    background: var(--white);
 }
 
 .texto-uno{
@@ -157,7 +158,7 @@ main{
     line-height: 120%;
     text-align: center;
     color: #343A40;
-    background: white;
+    background: var(--white);
 }
 
 .texto-dos{
@@ -167,7 +168,7 @@ main{
     line-height: 150%;
     text-align: center;
     color: var(--gray-text);
-    background: white;
+    background: var(--white);
 }
 
 .texto_encriptado{
@@ -202,7 +203,7 @@ main{
     font-size: 16px;
     line-height: 19px;
     text-align: center;
-    background: white;
+    background: var(--white);
     border: 1px solid var(--font);
     border-radius: 24px;
     color: var(--font);
@@ -286,7 +287,8 @@ footer{
 
     .encriptado{
         width: 665px;
-        height: 100px;
+        height: 120px;
+        max-height: 400px;
         display: flex;
         justify-content: center;
         align-items: flex-end;
@@ -311,13 +313,13 @@ footer{
 
     .boton_copiar{
         position: inherit;
-        width: 100%;
+        width: 80%;
         margin: 2px;
     }
 
     .texto_encriptado{
         width: 100%;
-        height: 210px;
+        height: 100%;
         padding: 10px;
     }
 
@@ -348,7 +350,6 @@ footer{
 
     .encriptado{
         width: 90%;
-        
     }
 
     footer{
