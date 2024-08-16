@@ -8,6 +8,9 @@ const btnDesencriptaar = document.querySelector(".boton-desencriptar")
 
 function limitarTexto(e){
     let texto = e.target.value;
+    if (/[A-Z]/.test(texto) || /[^a-z\s]/.test(texto)) {
+        alert('Solo letras minúsculas y sin acentos');
+    }
     texto = texto.replace(/[^a-z\s]/g, '');
     e.target.value = texto;
 }
